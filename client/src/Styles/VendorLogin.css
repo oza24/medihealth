@@ -4,6 +4,8 @@
   align-items: center;
   min-height: 100vh;
   background-color: #f8f8f8;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .login-right {
@@ -12,11 +14,13 @@
   border-radius: 12px;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
   width: 350px;
+  max-width: 100%;
 }
 
 .login-right h2 {
   margin-bottom: 20px;
   text-align: center;
+  font-size: 24px;
 }
 
 .google-btn {
@@ -30,10 +34,12 @@
   cursor: pointer;
   font-size: 16px;
   transition: 0.3s;
+  width: 100%;
 }
 
 .google-icon {
   font-size: 24px;
+  margin-right: 10px;
 }
 
 .google-btn:hover {
@@ -52,6 +58,8 @@ form input {
   margin: 10px 0;
   border: 1px solid #ddd;
   border-radius: 6px;
+  font-size: 15px;
+  box-sizing: border-box;
 }
 
 .login-btn {
@@ -63,10 +71,79 @@ form input {
   border-radius: 6px;
   font-weight: bold;
   cursor: pointer;
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+.login-btn:hover {
+  background-color: #0b7d45;
 }
 
 .register-link {
   margin-top: 15px;
   text-align: center;
   font-size: 14px;
+  color: #333;
+}
+
+/* ========== Responsive Media Queries ========== */
+
+/* Tablets (≤768px) */
+@media (max-width: 768px) {
+  .login-right {
+    padding: 30px;
+    width: 300px;
+  }
+
+  .login-right h2 {
+    font-size: 22px;
+  }
+
+  .google-btn {
+    font-size: 15px;
+  }
+
+  form input {
+    font-size: 14px;
+  }
+
+  .login-btn {
+    font-size: 15px;
+  }
+}
+
+/* Mobiles (≤480px) */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 15px;
+  }
+
+  .login-right {
+    padding: 25px 20px;
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .login-right h2 {
+    font-size: 20px;
+  }
+
+  .google-btn {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  form input {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .login-btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .register-link {
+    font-size: 13px;
+  }
 }

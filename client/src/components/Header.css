@@ -14,6 +14,7 @@
   justify-content: space-between;
   padding: 0 20px;
   gap: 45px;
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -27,8 +28,15 @@
   margin-right: 20px;
 }
 
+/* ---------- Navigation Links ---------- */
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
 .nav a {
-  margin: 0 15px;
   color: white;
   text-decoration: none;
   font-weight: 500;
@@ -43,8 +51,9 @@
 .header-right {
   display: flex;
   align-items: center;
-  gap: 35px;
-  margin-left: auto; /* Push right side */
+  gap: 25px;
+  margin-left: auto;
+  flex-wrap: wrap;
 }
 
 /* ---------- Search Styles ---------- */
@@ -69,7 +78,7 @@
   transition: width 0.3s ease;
 }
 
-/* Dropdown container */
+/* Search Dropdown */
 .search-dropdown {
   position: absolute;
   top: 45px;
@@ -87,7 +96,6 @@
   margin: 0;
 }
 
-/* Each search item */
 .search-item {
   padding: 12px;
   cursor: pointer;
@@ -102,28 +110,6 @@
 
 /* ---------- Cart and Login ---------- */
 .cart-img {
-  width: 30px;
-  height: 30px;
-  margin-left: 15px;
-  cursor: pointer;
-  border: none;        /* Removes any default border */
-  padding: 0;           /* Removes padding */
-  outline: none;        /* Removes focus outline if any */
-  background: none;     /* Ensures no background behind the image */
-  display: inline-block;
-  vertical-align: middle;
-  object-fit: contain;  /* Keeps the image clean inside its box */
-}
-
-
-.cart-img:hover {
-  transform: scale(1.1);
-  transition: transform 0.2s ease-in-out;
-}
-
-
-
-.cart-img {
   width: 32px;
   height: 32px;
   margin-left: 15px;
@@ -131,6 +117,11 @@
   object-fit: contain;
   background: transparent;
   border: none;
+  transition: transform 0.2s ease-in-out;
+}
+
+.cart-img:hover {
+  transform: scale(1.1);
 }
 
 .user-button {
@@ -151,4 +142,79 @@
 
 .user-icon:hover {
   transform: scale(1.1);
+}
+
+/* ---------- Responsive Media Queries ---------- */
+
+/* Tablets (≤768px) */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .nav {
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .nav a {
+    font-size: 18px;
+  }
+
+  .search-container {
+    width: 100%;
+  }
+
+  .search-bar {
+    font-size: 14px;
+  }
+
+  .search-bar:focus {
+    width: 100%;
+  }
+
+  .header-right {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+  }
+}
+
+/* Mobiles (≤480px) */
+@media (max-width: 480px) {
+  .header {
+    padding: 20px 0;
+  }
+
+  .logo img {
+    width: 45px;
+    height: 45px;
+    margin-right: 12px;
+  }
+
+  .nav a {
+    font-size: 16px;
+  }
+
+  .search-container {
+    width: 100%;
+  }
+
+  .search-bar {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  .search-dropdown {
+    font-size: 13px;
+  }
+
+  .cart-img,
+  .user-icon {
+    width: 28px;
+    height: 28px;
+  }
 }

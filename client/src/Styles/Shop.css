@@ -37,3 +37,53 @@
 .shop-button:hover {
   background-color: #0056b3;
 }
+
+/* ========== Responsive Media Queries ========== */
+
+/* Tablets (≤768px) */
+@media (max-width: 768px) {
+  .shop-container {
+    padding: 20px;
+  }
+
+  .shop-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+  }
+
+  .shop-image {
+    width: 130px;
+    height: 130px;
+  }
+
+  .shop-button {
+    font-size: 0.95rem;
+    padding: 8px 16px;
+  }
+}
+
+/* Mobiles (≤480px) */
+@media (max-width: 480px) {
+  .shop-container {
+    padding: 15px 10px;
+  }
+
+  .shop-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .shop-card {
+    padding: 12px;
+  }
+
+  .shop-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .shop-button {
+    font-size: 0.9rem;
+    width: 100%;
+    padding: 10px;
+  }
+}

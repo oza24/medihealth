@@ -1,8 +1,8 @@
 .home-container {
   font-family: 'Segoe UI', sans-serif;
-  
 }
 
+/* ===== HERO SECTION ===== */
 .hero {
   background: url('/public/images/background_img.jpg') no-repeat center center/cover;
   height: 60vh;
@@ -30,6 +30,7 @@
   cursor: pointer;
 }
 
+/* ===== CATEGORY SECTION ===== */
 .categories {
   padding: 40px;
   text-align: center;
@@ -55,6 +56,7 @@
   background-color: #e6f7ff;
 }
 
+/* ===== PRODUCTS SECTION ===== */
 .products {
   padding: 40px;
   text-align: center;
@@ -93,6 +95,7 @@
   cursor: pointer;
 }
 
+/* ===== TRUST SECTION ===== */
 .trust-section {
   background: #f8f9fa;
   padding: 50px;
@@ -116,10 +119,90 @@
   font-size: 1rem;
 }
 
+/* ===== FOOTER ===== */
 .footer {
   background: #222;
   color: #ccc;
   padding: 20px;
   text-align: center;
   font-size: 0.9rem;
+}
+
+/* ========== RESPONSIVE MEDIA QUERIES ========== */
+
+/* Tablets (≤768px) */
+@media (max-width: 768px) {
+  .hero {
+    height: 50vh;
+    padding: 20px;
+  }
+
+  .hero-text {
+    padding: 15px 20px;
+    font-size: 1rem;
+  }
+
+  .shop-now {
+    font-size: 0.95rem;
+    padding: 10px 20px;
+  }
+
+  .categories,
+  .products,
+  .trust-section {
+    padding: 30px 15px;
+  }
+
+  .product-card img {
+    width: 130px;
+    height: 180px;
+  }
+
+  .trust-item {
+    width: 160px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobiles (≤480px) */
+@media (max-width: 480px) {
+  .hero {
+    height: 40vh;
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .hero-text {
+    padding: 10px 15px;
+    font-size: 0.95rem;
+  }
+
+  .shop-now {
+    font-size: 0.9rem;
+    padding: 10px 16px;
+  }
+
+  .category-grid,
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .trust-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .trust-item {
+    width: 90%;
+  }
+
+  .footer {
+    font-size: 0.85rem;
+    padding: 15px;
+  }
 }

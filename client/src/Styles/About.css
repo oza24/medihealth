@@ -62,8 +62,10 @@
   color: #007bff;
 }
 
+/* 🔷 Tablet devices (768px and below) */
 @media (max-width: 768px) {
   .about-container {
+    margin: 40px 20px;
     padding: 25px 20px;
   }
 
@@ -78,5 +80,27 @@
   .about-container p,
   .about-container ul li {
     font-size: 1rem;
+  }
+}
+
+/* 🔷 Mobile devices (480px and below) */
+@media (max-width: 480px) {
+  .about-container {
+    margin: 30px 15px;
+    padding: 20px 15px;
+    border-radius: 12px;
+  }
+
+  .about-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .about-container h2 {
+    font-size: 1.2rem;
+  }
+
+  .about-container p,
+  .about-container ul li {
+    font-size: 0.95rem;
   }
 }

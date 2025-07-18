@@ -6,12 +6,14 @@
   border-radius: 12px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
 }
 
 .vendor-register-container h2 {
   text-align: center;
   margin-bottom: 25px;
   color: #333;
+  font-size: 24px;
 }
 
 .vendor-register-container input {
@@ -46,8 +48,51 @@
 .vendor-register-container button:hover {
   background-color: #0056b3;
 }
+
 .vendor-register-container .error-message {
   color: red;
   font-size: 14px;
   margin-top: 10px;
+}
+
+/* ========== Responsive Media Queries ========== */
+
+/* Tablets (≤768px) */
+@media (max-width: 768px) {
+  .vendor-register-container {
+    margin: 30px 20px;
+    padding: 25px;
+  }
+
+  .vendor-register-container h2 {
+    font-size: 22px;
+  }
+
+  .vendor-register-container input,
+  .vendor-register-container button {
+    font-size: 15px;
+  }
+}
+
+/* Mobiles (≤480px) */
+@media (max-width: 480px) {
+  .vendor-register-container {
+    margin: 20px 10px;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .vendor-register-container h2 {
+    font-size: 20px;
+  }
+
+  .vendor-register-container input,
+  .vendor-register-container button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .vendor-register-container .error-message {
+    font-size: 13px;
+  }
 }

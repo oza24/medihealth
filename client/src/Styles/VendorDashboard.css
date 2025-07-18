@@ -2,6 +2,8 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .vendor-dashboard {
@@ -37,6 +39,7 @@ body {
   border-radius: 6px;
   font-size: 15px;
   resize: vertical;
+  width: 100%;
 }
 
 .vendor-dashboard button {
@@ -53,6 +56,62 @@ body {
 .vendor-dashboard button:hover {
   background-color: #1b5e20;
 }
+
 .vendor-dashboard .product-list {
   margin-top: 30px;
+}
+
+/* ========== Responsive Media Queries ========== */
+
+/* Tablets (≤768px) */
+@media (max-width: 768px) {
+  .vendor-dashboard {
+    margin: 30px 20px;
+    padding: 25px;
+  }
+
+  .vendor-dashboard h2 {
+    font-size: 1.5rem;
+  }
+
+  .vendor-dashboard h3 {
+    font-size: 1.2rem;
+  }
+
+  .vendor-dashboard input,
+  .vendor-dashboard textarea {
+    font-size: 14px;
+  }
+
+  .vendor-dashboard button {
+    font-size: 15px;
+  }
+}
+
+/* Mobiles (≤480px) */
+@media (max-width: 480px) {
+  .vendor-dashboard {
+    margin: 20px 10px;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .vendor-dashboard h2 {
+    font-size: 1.3rem;
+  }
+
+  .vendor-dashboard h3 {
+    font-size: 1.1rem;
+  }
+
+  .vendor-dashboard button {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .vendor-dashboard input,
+  .vendor-dashboard textarea {
+    font-size: 13px;
+    padding: 8px;
+  }
 }
