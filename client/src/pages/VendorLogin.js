@@ -4,7 +4,7 @@ import { GoogleLogin } from '@react-oauth/google';
 import { jwtDecode } from 'jwt-decode';  
 
 import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import api from '../api';  // ✅ centralized Axios instance
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
@@ -15,7 +15,7 @@ const LoginPage = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/api/vendors/login', {
+      const res = await api.post('/api/vendors/login', {
         email,
         password,
       });

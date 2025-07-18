@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom'; // for navigation
+import { useNavigate } from 'react-router-dom';
+import api from '../api'; // ✅ Centralized Axios instance
 import '../Styles/VendorRegister.css';
 
 function VendorRegister() {
-  const navigate = useNavigate(); // ✅ useNavigate hook
+  const navigate = useNavigate();
 
   const [form, setForm] = useState({
     name: '',
@@ -19,19 +19,13 @@ function VendorRegister() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/api/vendors/register', form);
-
+      const res = await api.post('/api/vendors/register', form);  // ✅ using deployed backend
       alert(res.data.message || 'Registered successfully ✅');
-
-      // ✅ Redirect to vendor login after registration
-      navigate('/vendor/login');
-
+      navigate('/vendor/login');  // ✅ redirect to login
     } catch (err) {
       console.error('Registration failed:', err);
       const errorMessage =
-        err.response?.data?.message ||
-        err.message ||
-        'Something went wrong';
+        err.response?.data?.message || err.message || 'Something went wrong';
       alert('Error: ' + errorMessage);
     }
   };

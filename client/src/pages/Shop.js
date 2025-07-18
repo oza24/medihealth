@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import '../Styles/Shop.css'; // Create this CSS file for styling
+import api from '../api'; // ✅ centralized API instance
+import '../Styles/Shop.css';
 
 const Shop = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    // Fetch products from backend
     const fetchProducts = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/vendors/products');
+        const res = await api.get('/api/vendors/products');  // ✅ live backend
         setProducts(res.data);
       } catch (err) {
         console.error('Error fetching products:', err);

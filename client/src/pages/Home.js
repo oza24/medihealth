@@ -1,12 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import '../Styles/Home.css';
+import api from '../api';  // import the API at the top
 
 const Home = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/vendors/products')
+    
+
+    useEffect(() => {
+      api.get('/api/vendors/products')
+        .then((res) => setProducts(res.data))
+        .catch((err) => console.error('Error fetching products:', err));
+    }, []);
+
       .then((res) => setProducts(res.data))
       .catch((err) => console.error('Error fetching products:', err));
   }, []);

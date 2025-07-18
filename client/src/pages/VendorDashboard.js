@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import api from '../api'; // ✅ centralized API instance
 import '../Styles/VendorDashboard.css';
 
 const VendorDashboard = ({ vendorEmail }) => {
@@ -29,7 +29,11 @@ const VendorDashboard = ({ vendorEmail }) => {
     formData.append('vendorEmail', vendorEmail);
 
     try {
-      const res = await axios.post('http://localhost:5000/api/vendors/add-product', formData);
+      const res = await api.post('/api/vendors/add-product', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
       alert('Product added successfully');
       console.log(res.data);
     } catch (err) {

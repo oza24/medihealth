@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import api from '../api';  // ✅ use centralized axios
 import '../Styles/Contact.css';
 
 const Contact = () => {
@@ -15,10 +15,11 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/contact', form);
+      await api.post('/api/contact', form);  // ✅ use base URL
       alert('Message sent successfully ✅');
       setForm({ name: '', email: '', message: '' });
     } catch (err) {
+      console.error('Submit error:', err);
       alert('Something went wrong ❌');
     }
   };

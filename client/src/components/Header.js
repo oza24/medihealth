@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Header.css';
-import axios from 'axios';
+// import axios from 'axios';
+import api from '../api';  // import at the top
+
 
 const Header = () => {
   const navigate = useNavigate();
@@ -22,7 +24,9 @@ const Header = () => {
         return;
       }
       try {
-        const res = await axios.get(`http://localhost:5000/api/products/search?q=${searchInput}`);
+        
+        const res = await api.get(`/api/products/search?q=${searchInput}`);
+
         setSearchResults(res.data);
       } catch (err) {
         console.error('Search failed:', err);
