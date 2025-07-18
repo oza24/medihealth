@@ -206,3 +206,22 @@
     padding: 15px;
   }
 }
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .product-card img {
+    width: 100px;
+    height: 140px;
+  }
+
+  .hero-text h1 {
+    font-size: 1.4rem;
+  }
+
+  .shop-button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
