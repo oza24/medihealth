@@ -1,0 +1,15 @@
+# Node.js
+node_modules/
+
+# Logs
+logs
+*.log
+
+# dotenv
+.env
+
+# React build
+client/build
+
+# Mac/OS or system files
+.DS_Store

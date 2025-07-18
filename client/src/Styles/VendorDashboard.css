@@ -1,0 +1,58 @@
+/* VendorDashboard.css */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.vendor-dashboard {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.vendor-dashboard h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.vendor-dashboard h3 {
+  margin-bottom: 15px;
+  color: #2e7d32;
+}
+
+.vendor-dashboard form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.vendor-dashboard input,
+.vendor-dashboard textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  resize: vertical;
+}
+
+.vendor-dashboard button {
+  padding: 12px;
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.vendor-dashboard button:hover {
+  background-color: #1b5e20;
+}
+.vendor-dashboard .product-list {
+  margin-top: 30px;
+}

@@ -1,0 +1,154 @@
+/* ---------- Header Styles ---------- */
+.header {
+  background-color: #0f9d58;
+  padding: 30px 0;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  gap: 45px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+}
+
+.nav a {
+  margin: 0 15px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Right Section ---------- */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  margin-left: auto; /* Push right side */
+}
+
+/* ---------- Search Styles ---------- */
+.search-container {
+  position: relative;
+  width: 220px;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 14px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  outline: none;
+  background: white;
+  color: black;
+}
+
+.search-bar:focus {
+  width: 260px;
+  transition: width 0.3s ease;
+}
+
+/* Dropdown container */
+.search-dropdown {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  width: 100%;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 999;
+  max-height: 200px;
+  overflow-y: auto;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Each search item */
+.search-item {
+  padding: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+  transition: background 0.2s ease;
+}
+
+.search-item:hover {
+  background-color: #f4f4f4;
+}
+
+/* ---------- Cart and Login ---------- */
+.cart-img {
+  width: 30px;
+  height: 30px;
+  margin-left: 15px;
+  cursor: pointer;
+  border: none;        /* Removes any default border */
+  padding: 0;           /* Removes padding */
+  outline: none;        /* Removes focus outline if any */
+  background: none;     /* Ensures no background behind the image */
+  display: inline-block;
+  vertical-align: middle;
+  object-fit: contain;  /* Keeps the image clean inside its box */
+}
+
+
+.cart-img:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+
+
+.cart-img {
+  width: 32px;
+  height: 32px;
+  margin-left: 15px;
+  cursor: pointer;
+  object-fit: contain;
+  background: transparent;
+  border: none;
+}
+
+.user-button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.user-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  border-radius: 50%;
+  transition: transform 0.2s ease-in-out;
+}
+
+.user-icon:hover {
+  transform: scale(1.1);
+}
