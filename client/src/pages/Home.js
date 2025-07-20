@@ -6,7 +6,7 @@ import api from '../api';  // import the API at the top
 const Home = () => {
   const [products, setProducts] = useState([]);
 
-  useEffect(() => {
+  
     
 
     useEffect(() => {
@@ -15,9 +15,8 @@ const Home = () => {
         .catch((err) => console.error('Error fetching products:', err));
     }, []);
 
-      .then((res) => setProducts(res.data))
-      .catch((err) => console.error('Error fetching products:', err));
-  }, []);
+    
+  
 
   return (
     <div className="home-container">
