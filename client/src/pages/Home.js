@@ -46,10 +46,8 @@ const Home = () => {
           {Array.isArray(products) && products.length > 0 ? (
             products.map(product => (
               <div className="product-card" key={product._id}>
-                <img
-                  src={product.imageUrl?.startsWith('http') ? product.imageUrl : `/images/${product.imageUrl || 'placeholder.jpg'}`}
-                  alt={product.name}
-                />
+                <img src={product.imageUrl} alt={product.name} />
+
 
                 <h3>{product.name}</h3>
                 <p>₹{product.price}</p>
