@@ -557,3 +557,35 @@
     text-align: center;
   }
 }
+/* 🔧 Make product images responsive on all phones, including Vivo */
+.product-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+/* For mobile (≤480px width) */
+@media (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 0 10px;
+  }
+
+  .product-card {
+    padding: 15px;
+  }
+
+  .product-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .shop-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 0.95rem;
+  }
+}
