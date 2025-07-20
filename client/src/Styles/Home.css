@@ -298,3 +298,143 @@
     font-size: 1.2rem;
   }
 }
+
+/* === VIVO / SMALL SCREEN FIXES === */
+@media (max-width: 480px) {
+  .hero {
+    height: 40vh;
+    padding: 10px;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .hero-text {
+    padding: 10px 15px;
+    font-size: 0.95rem;
+  }
+
+  .hero-text h1 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  .hero-text p {
+    font-size: 0.9rem;
+  }
+
+  .shop-now {
+    font-size: 0.85rem;
+    padding: 8px 14px;
+  }
+
+  .category-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 0 10px;
+  }
+
+  .category-card {
+    font-size: 0.9rem;
+    padding: 12px;
+  }
+
+  .products h2 {
+    font-size: 1.2rem;
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 0 10px;
+  }
+
+  .product-card {
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+
+  .product-card h3 {
+    font-size: 1rem;
+    margin: 5px 0;
+  }
+
+  .product-card p {
+    font-size: 0.95rem;
+    margin: 5px 0;
+  }
+
+  .product-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .shop-button {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .trust-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .trust-item {
+    width: 100%;
+    margin: 10px 0;
+    font-size: 0.9rem;
+  }
+
+  .footer {
+    font-size: 0.85rem;
+    padding: 10px;
+  }
+}
+.product-card h3,
+.shop-card h4 {
+  font-size: 1rem;
+  margin: 5px 0;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  text-align: center;
+}
+
+.product-card p,
+.shop-card p {
+  font-size: 0.95rem;
+  margin: 5px 0;
+  text-align: center;
+}
+@media (max-width: 480px) {
+  .product-grid,
+  .shop-grid {
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+  }
+
+  .product-card,
+  .shop-card {
+    padding: 12px;
+  }
+
+  .product-card img,
+  .shop-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .shop-button,
+  .shop-now {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+}

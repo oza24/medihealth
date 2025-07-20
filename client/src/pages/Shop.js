@@ -25,10 +25,11 @@ const Shop = () => {
         {products.map(product => (
           <div className="shop-card" key={product._id}>
             <img
-              src={product.imageUrl}
+              src={product.imageUrl?.startsWith('http') ? product.imageUrl : `/images/${product.imageUrl || 'placeholder.jpg'}`}
               alt={product.name}
               className="shop-image"
             />
+
             <h4>{product.name}</h4>
             <p>₹{product.price}</p>
             <button className="shop-button">Shop</button>
