@@ -104,3 +104,76 @@
     font-size: 0.95rem;
   }
 }
+/* 🔹 Ultra Small Devices (360px–420px width, like many Vivo phones) */
+@media (max-width: 420px) {
+  .hero {
+    height: 40vh;
+    flex-direction: column;
+    padding: 10px;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .hero-text h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .shop-now {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  .category-grid,
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .category-card,
+  .product-card {
+    padding: 15px;
+    font-size: 0.95rem;
+  }
+
+  .product-card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .shop-button {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .trust-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .trust-item {
+    width: 90%;
+    font-size: 0.9rem;
+    padding: 15px;
+  }
+
+  .footer {
+    font-size: 0.85rem;
+    padding: 15px 10px;
+  }
+
+  input,
+  textarea,
+  button {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+
+  h2, h3 {
+    font-size: 1.2rem;
+  }
+}
