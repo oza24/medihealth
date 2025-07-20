@@ -1,22 +1,21 @@
 import React, { useEffect, useState } from 'react';
-// import axios from 'axios';
 import '../Styles/Home.css';
-import api from '../api';  // import the API at the top
+import api from '../api'; // API import
 
 const Home = () => {
   const [products, setProducts] = useState([]);
 
-  
-    
-
-    useEffect(() => {
-      api.get('/api/vendors/products')
-        .then((res) => setProducts(res.data))
-        .catch((err) => console.error('Error fetching products:', err));
-    }, []);
-
-    
-  
+  useEffect(() => {
+    api.get('/api/vendors/products')
+      .then((res) => {
+        console.log("API response:", res.data);
+        // Adjust this line depending on actual API structure
+        setProducts(Array.isArray(res.data) ? res.data : res.data.products || []);
+      })
+      .catch((err) => {
+        console.error('Error fetching products:', err);
+      });
+  }, []);
 
   return (
     <div className="home-container">
@@ -44,14 +43,18 @@ const Home = () => {
       <section className="products">
         <h2>Top Products</h2>
         <div className="product-grid">
-          {products.map(product => (
-            <div className="product-card" key={product._id}>
-              <img src={product.imageUrl} alt={product.name} />
-              <h3>{product.name}</h3>
-              <p>₹{product.price}</p>
-              <button className="shop-button">Shop</button>
-            </div>
-          ))}
+          {Array.isArray(products) && products.length > 0 ? (
+            products.map(product => (
+              <div className="product-card" key={product._id}>
+                <img src={product.imageUrl} alt={product.name} />
+                <h3>{product.name}</h3>
+                <p>₹{product.price}</p>
+                <button className="shop-button">Shop</button>
+              </div>
+            ))
+          ) : (
+            <p>No products available or failed to fetch products.</p>
+          )}
         </div>
       </section>
 
