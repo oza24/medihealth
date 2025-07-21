@@ -71,11 +71,11 @@
   outline: none;
   background: white;
   color: black;
+  transition: width 0.3s ease;
 }
 
 .search-bar:focus {
   width: 260px;
-  transition: width 0.3s ease;
 }
 
 /* Search Dropdown */
@@ -146,7 +146,7 @@
 
 /* ---------- Responsive Media Queries ---------- */
 
-/* Tablets (≤768px) */
+/* Tablets and below (≤768px) */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
@@ -155,7 +155,9 @@
   }
 
   .nav {
-    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
     gap: 10px;
   }
 
@@ -165,42 +167,36 @@
 
   .search-container {
     width: 100%;
+    margin-top: 10px;
   }
 
   .search-bar {
     font-size: 14px;
-  }
-
-  .search-bar:focus {
-    width: 100%;
+    width: 100% !important;
   }
 
   .header-right {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: space-between;
     width: 100%;
   }
 }
 
-/* Mobiles (≤480px) */
+/* Mobile Devices (≤480px) */
 @media (max-width: 480px) {
   .header {
     padding: 20px 0;
   }
 
   .logo img {
-    width: 45px;
-    height: 45px;
-    margin-right: 12px;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
   }
 
   .nav a {
     font-size: 16px;
-  }
-
-  .search-container {
-    width: 100%;
   }
 
   .search-bar {
@@ -210,69 +206,6 @@
 
   .search-dropdown {
     font-size: 13px;
-  }
-
-  .cart-img,
-  .user-icon {
-    width: 28px;
-    height: 28px;
-  }
-}
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .nav {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .search-container {
-    width: 100%;
-    margin-top: 10px;
-  }
-
-  .header-right {
-    justify-content: space-between;
-    width: 100%;
-    flex-wrap: wrap;
-  }
-}
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .header-right {
-    justify-content: space-between;
-    width: 100%;
-    flex-wrap: wrap;
-  }
-
-  .search-container {
-    width: 100%;
-    margin-top: 10px;
-  }
-}
-@media (max-width: 480px) {
-  .logo img {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-  }
-
-  .nav a {
-    font-size: 14px;
-  }
-
-  .search-bar {
-    font-size: 12px;
-    padding: 6px 10px;
   }
 
   .cart-img,
