@@ -186,39 +186,60 @@
 /* Mobile Devices (≤480px) */
 @media (max-width: 480px) {
   .header {
-    padding: 20% 0;
+    padding: 20px 0;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
   }
 
   .logo img {
-    width: 40%;
-    height: 40%;
-    margin-right: 10%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
   }
 
   .nav {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     width: 100%;
-    gap: 8%;
+    gap: 8px;
+    margin-bottom: 10px;
   }
 
   .nav a {
-    font-size: 16%;
-    padding: 6% 0;
+    font-size: 16px;
+    padding: 6px 0;
+  }
+
+  .search-container {
+    width: 100%;
+    margin-bottom: 10px;
   }
 
   .search-bar {
-    font-size: 13%;
-    padding: 8% 12%;
+    font-size: 13px;
+    padding: 8px 12px;
+    width: 100% !important;
   }
 
   .search-dropdown {
-    font-size: 13%;
+    font-size: 13px;
+  }
+
+  .header-right {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 10px;
   }
 
   .cart-img,
   .user-icon {
-    width: 24%;
-    height: 24%;
+    width: 24px;
+    height: 24px;
   }
 }
