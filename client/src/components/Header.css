@@ -79,7 +79,7 @@
 }
 
 /* Search Dropdown */
-.search-dropdown {
+/* .search-dropdown {
   position: absolute;
   top: 45px;
   left: 0;
@@ -94,9 +94,9 @@
   list-style: none;
   padding: 0;
   margin: 0;
-}
+} */
 
-.search-item {
+/* .search-item {
   padding: 12px;
   cursor: pointer;
   font-size: 14px;
@@ -106,10 +106,10 @@
 
 .search-item:hover {
   background-color: #f4f4f4;
-} 
+}  */
 
 /* ---------- Cart and Login ---------- */
-.cart-img {
+/* .cart-img {
   width: 32px;
   height: 32px;
   margin-left: 15px;
@@ -142,12 +142,12 @@
 
 .user-icon:hover {
   transform: scale(1.1);
-}
+} */
 
 /* ---------- Responsive Media Queries ---------- */
 
 /* Tablets and below (≤768px) */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .container {
     flex-direction: column;
     align-items: flex-start;
@@ -184,7 +184,7 @@
 }
 
 /* Mobile Devices (≤480px) */
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
   .header {
     padding: 20px 0;
   }
@@ -242,4 +242,4 @@
     width: 24px;
     height: 24px;
   }
-} 
+}   */
