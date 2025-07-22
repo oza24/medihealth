@@ -4,6 +4,9 @@
   font-family: 'Segoe UI', sans-serif;
   padding: 0 15px;
   box-sizing: border-box;
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0 auto;
 }
 
 /* ===== HERO SECTION ===== */
@@ -170,6 +173,11 @@
 }
 
 @media (max-width: 480px) {
+   .home-container {
+    padding: 0 10px;
+    overflow-x: hidden;
+  }
+  
   .hero {
     height: auto;
     padding: 20px 10px;
