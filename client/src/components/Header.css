@@ -1,62 +1,70 @@
+/* ---------- Global Styles ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+}
+
 /* ---------- Header Styles ---------- */
 .header {
   background-color: #0f9d58;
-  padding: 30px 0;
+  padding: 20px 0;
   color: white;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
+/* ---------- Flex Container ---------- */
 .container {
   max-width: 1200px;
   margin: auto;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
-  gap: 45px;
-  flex-wrap: wrap;
+  gap: 15px;
 }
 
+/* ---------- Logo ---------- */
 .logo {
   display: flex;
   align-items: center;
+  gap: 10px;
 }
 
 .logo img {
   width: 60px;
   height: 60px;
-  margin-right: 20px;
+}
+
+.logo h1 {
+  font-size: 24px;
 }
 
 /* ---------- Navigation Links ---------- */
 .nav {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   gap: 15px;
+  flex-wrap: wrap;
 }
 
 .nav a {
   color: white;
   text-decoration: none;
   font-weight: 500;
-  font-size: 24px;
+  font-size: 18px;
 }
 
 .nav a:hover {
   text-decoration: underline;
 }
 
-/* ---------- Right Section ---------- */
-.header-right {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-  margin-left: auto;
-  flex-wrap: wrap;
-}
-
-/* ---------- Search Styles ---------- */
+/* ---------- Search Section ---------- */
 .search-container {
   position: relative;
   width: 220px;
@@ -71,11 +79,10 @@
   outline: none;
   background: white;
   color: black;
-  transition: width 0.3s ease;
 }
 
 .search-bar:focus {
-  width: 260px;
+  width: 240px;
 }
 
 /* Search Dropdown */
@@ -101,23 +108,25 @@
   cursor: pointer;
   font-size: 14px;
   color: #333;
-  transition: background 0.2s ease;
 }
 
 .search-item:hover {
   background-color: #f4f4f4;
 }
 
-/* ---------- Cart and Login ---------- */
+/* ---------- Cart and User Icon ---------- */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-left: auto;
+}
+
 .cart-img {
   width: 32px;
   height: 32px;
-  margin-left: 15px;
   cursor: pointer;
-  object-fit: contain;
-  background: transparent;
-  border: none;
-  transition: transform 0.2s ease-in-out;
 }
 
 .cart-img:hover {
@@ -127,17 +136,13 @@
 .user-button {
   background: none;
   border: none;
-  padding: 0;
-  margin-left: 15px;
   cursor: pointer;
 }
 
 .user-icon {
   width: 32px;
   height: 32px;
-  object-fit: contain;
   border-radius: 50%;
-  transition: transform 0.2s ease-in-out;
 }
 
 .user-icon:hover {
@@ -146,87 +151,77 @@
 
 /* ---------- Responsive Media Queries ---------- */
 
-/* Tablets and below (≤768px) */
+/* Tablets (≤ 768px) */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
+    align-items: stretch;
+  }
+
+  .logo {
+    margin-bottom: 10px;
   }
 
   .nav {
-    flex-direction: column;
-    align-items: flex-start;
+    justify-content: flex-start;
     width: 100%;
+    flex-wrap: wrap;
     gap: 10px;
-  }
-
-  .nav a {
-    font-size: 18px;
   }
 
   .search-container {
     width: 100%;
-    margin-top: 10px;
+    margin-bottom: 10px;
   }
 
   .search-bar {
-    font-size: 14px;
     width: 100% !important;
   }
 
   .header-right {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     width: 100%;
   }
 }
 
-/* Mobile Devices (≤480px) */
+/* Phones (≤ 480px) */
 @media (max-width: 480px) {
-  .header {
-    padding: 20% 0;
+  .container {
+    padding: 0 10px;
   }
 
   .logo img {
-    width: 40%;
-    height: 40%;
-    margin-right: 10%;
+    width: 40px;
+    height: 40px;
   }
 
-  .header-right {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    width: 100%;
-  }
-
-  .nav {
-    order: -1;
-    width: 100%;
-    margin-bottom: 10px;
-    flex-direction: row;
-    justify-content: flex-start;
-    gap: 8px;
+  .logo h1 {
+    font-size: 20px;
   }
 
   .nav a {
-    font-size: 16%;
+    font-size: 14px;
   }
 
   .search-bar {
-    font-size: 13%;
-    padding: 8% 12%;
+    font-size: 13px;
+    padding: 8px 12px;
   }
 
-  .search-dropdown {
-    font-size: 13%;
+  .search-item {
+    font-size: 13px;
   }
 
   .cart-img,
   .user-icon {
-    width: 24%;
-    height: 24%;
+    width: 26px;
+    height: 26px;
+  }
+
+  .header-right {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
   }
 }
