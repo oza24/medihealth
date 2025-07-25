@@ -29,10 +29,11 @@ const VendorDashboard = ({ vendorEmail }) => {
     formData.append('vendorEmail', vendorEmail);
 
     try {
-      const res = await api.post('/api/vendors/add-product', formData, {
+      await api.post('/api/vendors/add-product', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
+      
       });
       alert('Product added successfully');
       console.log(res.data);

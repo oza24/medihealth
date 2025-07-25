@@ -43,7 +43,9 @@ router.post('/register', async (req, res) => {
 router.post('/add-product', upload.single('image'), async (req, res) => {
   try {
     const { name, price, description, vendorEmail } = req.body;
-    const imageUrl = `http://localhost:5000/api/vendors/uploads/${req.file.filename}`;
+
+    // Save relative path only
+    const imageUrl = `/uploads/${req.file.filename}`;
 
     const newProduct = new Product({
       name,

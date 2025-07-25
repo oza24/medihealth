@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const path = require('path');
 require('dotenv').config();
 
 const app = express();
@@ -9,8 +10,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// ✅ Serve uploaded images to frontend
-app.use('/api/vendors/uploads', express.static('uploads'));
+// ✅ Serve uploaded images correctly
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // ✅ MongoDB Connection
 mongoose.connect(process.env.MONGO_URI, {
@@ -32,11 +33,13 @@ app.use('/api/vendors', vendorRoutes);
 const contactRoutes = require('./routes/contact');
 app.use('/api/contact', contactRoutes);
 
-const productRoutes = require('./routes/productRoutes'); // ✅ New line
-app.use('/api/products', productRoutes); // ✅ New route
-
+const productRoutes = require('./routes/productRoutes');
+app.use('/api/products', productRoutes);
 
 // Start server
 app.listen(5000, () => {
   console.log("🚀 Server running on http://localhost:5000");
 });
+
+
+app.use('/api/vendors/uploads', express.static(path.join(__dirname, 'uploads')));
