@@ -40,7 +40,7 @@ const Home = () => {
       {/* Hero */}
       <section className="relative text-black py-16 px-4 sm:px-6 md:px-20 text-center overflow-hidden">
         <div
-          className="absolute inset-0 opacity-20 bg-cover bg-center pointer-events-none"
+          className="absolute inset-0 opacity-100 bg-cover bg-center pointer-events-none"
           style={{ backgroundImage: "url('/images/background.jpg')" }}
         />
         <div className="relative z-10 max-w-4xl mx-auto animate-fadeIn">
