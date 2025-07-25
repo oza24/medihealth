@@ -8,7 +8,6 @@
     "start": "concurrently \"npm run server\" \"npm run client\"",
     "client": "cd client && npm start",
     "server": "cd backend && npm start"
-    
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
@@ -19,7 +18,8 @@
     "express": "^5.1.0",
     "mongoose": "^8.16.3",
     "react-icons": "^5.5.0",
-    "react-router-dom": "^7.6.3"
+    "react-router-dom": "^7.6.3",
+    "react-toastify": "^11.0.5"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.21",
@@ -27,5 +27,4 @@
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.11"
   }
-
-  }
+}

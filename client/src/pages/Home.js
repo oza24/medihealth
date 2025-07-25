@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import api from '../api';
 import {
   FaCapsules, FaAppleAlt, FaHeartbeat, FaVirus,
   FaShippingFast, FaLock, FaHeadset, FaCheckCircle
 } from 'react-icons/fa';
+import { CartContext } from '../contexts/CartContext';
 
 const categories = [
   { name: 'Medicines', icon: <FaCapsules size={28} className="mx-auto text-blue-500" /> },
@@ -22,6 +23,8 @@ const whyUs = [
 const Home = () => {
   const [products, setProducts] = useState([]);
   const [modalProduct, setModalProduct] = useState(null);
+  const [message, setMessage] = useState('');
+  const { cartItems, addToCart } = useContext(CartContext);
 
   useEffect(() => {
     api.get('/api/vendors/products')
@@ -33,6 +36,12 @@ const Home = () => {
         setProducts([]);
       });
   }, []);
+
+  const handleAddToCart = (product) => {
+    addToCart(product);
+    setMessage('✅ Product added to cart!');
+    setTimeout(() => setMessage(''), 2000);
+  };
 
   return (
     <div className="font-sans text-gray-800 bg-gradient-to-br from-blue-50 via-white to-teal-50">
@@ -74,7 +83,10 @@ const Home = () => {
 
       {/* Top Products */}
       <section className="py-10 px-4 sm:px-6 md:px-20">
-        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8">Top Products</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-4">Top Products</h2>
+        {message && (
+          <p className="text-center text-green-600 mb-4 font-semibold">{message}</p>
+        )}
         {products.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {products.map((product) => (
@@ -127,7 +139,13 @@ const Home = () => {
             <h3 className="text-xl font-bold mb-2">{modalProduct.name}</h3>
             <p className="text-blue-600 font-semibold mb-2">₹{modalProduct.price}</p>
             <p className="text-sm text-gray-700 mb-4">{modalProduct.description || 'No description available.'}</p>
-            <button className="w-full bg-blue-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 transition">
+            <button
+              className="w-full bg-blue-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 transition"
+              onClick={() => {
+                handleAddToCart(modalProduct);
+                setModalProduct(null);
+              }}
+            >
               Add to Cart
             </button>
           </div>

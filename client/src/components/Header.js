@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import api from '../api';
+import { CartContext } from '../contexts/CartContext';
+import { useContext } from 'react';
 
 const Header = () => {
   const navigate = useNavigate();
@@ -10,6 +12,10 @@ const Header = () => {
   const [searchInput, setSearchInput] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { cartItems } = useContext(CartContext);
+  const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+
+
 
   useEffect(() => {
     const name = localStorage.getItem('vendorName');
@@ -78,12 +84,14 @@ const Header = () => {
         {/* Right: Cart, User, Menu */}
         <div className="flex items-center space-x-4 sm:space-x-6 ml-3">
           {/* Cart */}
-          <img
-            src="/images/cart-img2.png"
-            alt="Cart"
-            className="w-6 h-6 sm:w-7 sm:h-7 cursor-pointer"
-            onClick={() => navigate('/cart')}
-          />
+          <div className="relative cursor-pointer" onClick={() => navigate('/cart')}>
+            <img src="/images/cart-img2.png" alt="Cart" className="w-6 h-6 sm:w-7 sm:h-7" />
+            {totalItems > 0 && (
+              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1.5 py-0.5 rounded-full">
+                {totalItems}
+              </span>
+            )}
+          </div>
 
           {/* User Icon */}
           <button
