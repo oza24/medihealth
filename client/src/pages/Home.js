@@ -95,7 +95,7 @@ const Home = () => {
                 className="bg-white p-4 rounded-xl shadow hover:shadow-xl hover:-translate-y-1 transition group"
               >
                 <img
-                  src={`https://medihealth-backend.onrender.com${product.imageUrl}`}
+                  src={`process.env.REACT_APP_API_BASE_URL${product.imageUrl}`}
                   alt={product.name}
                   className="w-full h-40 sm:h-48 object-cover rounded-lg mb-3"
                 />
