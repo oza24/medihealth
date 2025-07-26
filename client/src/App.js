@@ -7,7 +7,7 @@ import Header from './components/Header';
 import Footer from './components/Footer'; 
 import About from './pages/About';
 import Contact from './pages/Contact'; 
-import Shop from './pages/Shop'; 
+// import Shop from './pages/Shop'; 
 import { CartProvider } from './contexts/CartContext';
 import CartPage from './pages/CartPage'; // ⬅ added CartPage
 
@@ -26,7 +26,7 @@ function App() {
             <Route path="/vendor/dashboard" element={<VendorDashboard />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/shop" element={<Shop />} />
+            {/* <Route path="/shop" element={<Shop />} /> */}
             {/* You need a CartPage */}
             <Route path="/cart" element={<CartPage />} />
           </Routes>
