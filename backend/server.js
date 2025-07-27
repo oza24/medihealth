@@ -42,4 +42,4 @@ app.listen(5000, () => {
 });
 
 
-app.use('/api/vendors/uploads', express.static(path.join(__dirname, 'uploads')));
+

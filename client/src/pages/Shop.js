@@ -9,7 +9,7 @@ const Shop = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await api.get('/api/vendors/products');
+        const res = await api.get('/api/products/category/device');
         setProducts(res.data);
       } catch (err) {
         console.error('Error fetching products:', err);

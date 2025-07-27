@@ -42,7 +42,7 @@ router.post('/register', async (req, res) => {
 // ========================
 router.post('/add-product', upload.single('image'), async (req, res) => {
   try {
-    const { name, price, description, vendorEmail } = req.body;
+    const { name, price, description,category, vendorEmail } = req.body;
 
     // Save relative path only
     const imageUrl = `/uploads/${req.file.filename}`;
@@ -51,6 +51,7 @@ router.post('/add-product', upload.single('image'), async (req, res) => {
       name,
       price,
       description,
+      category,
       imageUrl,
       vendorEmail,
     });

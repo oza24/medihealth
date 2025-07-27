@@ -27,7 +27,7 @@ const Home = () => {
   const { cartItems, addToCart } = useContext(CartContext);
 
   useEffect(() => {
-    api.get('/api/vendors/products')
+    api.get('/api/products/category/medicine')
       .then((res) => {
         const data = res.data;
         setProducts(Array.isArray(data) ? data : data.products || []);
@@ -95,7 +95,7 @@ const Home = () => {
                 className="bg-white p-4 rounded-xl shadow hover:shadow-xl hover:-translate-y-1 transition group"
               >
                 <img
-                  src={`process.env.REACT_APP_API_BASE_URL${product.imageUrl}`}
+                  src={`${process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000'}${product.imageUrl}`}
                   alt={product.name}
                   className="w-full h-40 sm:h-48 object-cover rounded-lg mb-3"
                 />

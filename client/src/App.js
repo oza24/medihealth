@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import About from './pages/About';
 import Contact from './pages/Contact'; 
 // import Shop from './pages/Shop'; 
+import Devices from './pages/Devices'; // ⬅ added Devices
 import { CartProvider } from './contexts/CartContext';
 import CartPage from './pages/CartPage'; // ⬅ added CartPage
 
@@ -29,6 +30,7 @@ function App() {
             {/* <Route path="/shop" element={<Shop />} /> */}
             {/* You need a CartPage */}
             <Route path="/cart" element={<CartPage />} />
+            <Route path="/devices" element={<Devices />} />
           </Routes>
           <Footer />
         </Router>

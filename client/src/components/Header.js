@@ -115,18 +115,22 @@ const Header = () => {
       {menuOpen && (
         <nav className="sm:hidden bg-green-500 text-white px-4 pb-3 transition-all duration-300">
           <a href="/" className="block py-2 border-b border-green-400" onClick={() => setMenuOpen(false)}>Home</a>
-          <a href="/shop" className="block py-2 border-b border-green-400" onClick={() => setMenuOpen(false)}>Shop</a>
+          {/* <a href="/shop" className="block py-2 border-b border-green-400" onClick={() => setMenuOpen(false)}>Shop</a>
           <a href="/about" className="block py-2 border-b border-green-400" onClick={() => setMenuOpen(false)}>About</a>
-          <a href="/contact" className="block py-2" onClick={() => setMenuOpen(false)}>Contact</a>
+          <a href="/contact" className="block py-2" onClick={() => setMenuOpen(false)}>Contact</a> */}
+          <a href="/devices" className="block py-2 border-b border-green-400" onClick={() => setMenuOpen(false)}>Devices</a>
+
+          
         </nav>
       )}
 
       {/* Desktop Navigation */}
       <nav className="hidden sm:flex justify-center space-x-8 py-2 bg-green-700 text-white text-sm font-medium">
         <a href="/" className="hover:underline">Home</a>
-        <a href="/shop" className="hover:underline">Shop</a>
+        {/* <a href="/shop" className="hover:underline">Shop</a>
         <a href="/about" className="hover:underline">About</a>
-        <a href="/contact" className="hover:underline">Contact</a>
+        <a href="/contact" className="hover:underline">Contact</a> */}
+        <a href="/devices" className="hover:underline">Devices</a>
       </nav>
     </header>
   );
